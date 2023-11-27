@@ -32,3 +32,14 @@ app.use('/', index);
 require('./error-handling')(app);
 
 module.exports = app;
+
+// // Browser Sync
+// const browserSync = require("browser-sync");
+
+// // Start the server
+// browserSync({
+//   proxy: "http://localhost:3000", // proxying the app domain
+//   files: ['public', 'views'] // watching the following folders
+// });
+
+
