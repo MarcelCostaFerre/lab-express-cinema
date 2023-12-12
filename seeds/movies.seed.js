@@ -98,7 +98,11 @@ const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/lab-expr
   .connect(MONGO_URI)
   .then(x => {
     console.log(`Connected to Mongo database: "${x.connections[0].name}"`);
-
+  })
+  .then(() => {
+    return Movie.deleteMany();
+  })
+  .then(()=> {
     // Create new documents in the movies collection
     return Movie.create(movies);
   })
